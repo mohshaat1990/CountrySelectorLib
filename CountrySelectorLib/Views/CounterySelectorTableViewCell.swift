@@ -13,14 +13,13 @@ class CounterySelectorTableViewCell: UITableViewCell {
     @IBOutlet weak var counterFlag: UIImageView!
     @IBOutlet weak var counteryNameLabel: UILabel!
     @IBOutlet weak var counteryCodeLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     func setupCell(countery: Country) {
-        self.counterFlag.image = UIImage(named:countery.counterFlag)
+        self.counterFlag.image = countery.counterFlag
         self.counteryNameLabel.text = countery.name
         self.counteryCodeLabel.text = countery.phoneCode
     }

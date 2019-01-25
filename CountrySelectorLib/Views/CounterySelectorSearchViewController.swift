@@ -39,7 +39,8 @@ import libPhoneNumber_iOS
     }
     
     func registerCell() {
-      counteryTableView.register(UINib(nibName: cellReuseIdentifier, bundle: nil), forCellReuseIdentifier: cellReuseIdentifier )
+        let bundle = Bundle(for: CounterySelectorTableViewCell.classForCoder())
+      counteryTableView.register(UINib(nibName: cellReuseIdentifier, bundle: bundle), forCellReuseIdentifier: cellReuseIdentifier )
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -96,7 +97,8 @@ import libPhoneNumber_iOS
             self.definesPresentationContext = true
         }
         
-        let leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "ic_remove"), style: .done, target: self, action: #selector(CounterySelectorSearchViewController.dismissAction))
+        let bundle = Bundle(for: CounterySelectorTableViewCell.classForCoder())
+        let leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "ic_remove", in: bundle, compatibleWith: nil), style: .done, target: self, action: #selector(CounterySelectorSearchViewController.dismissAction))
         self.navigationItem.leftBarButtonItem = leftBarButtonItem
     }
 }

@@ -13,8 +13,9 @@ class CountrySelectorPresenter: NSObject {
     
    private lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
   var counterySelectorView: CounterySelectorView?
+   let bundle = Bundle(for: CounterySelectorTableViewCell.classForCoder())
     
-    func attatchView(counterySelectorView: CounterySelectorView) {
+  func attatchView(counterySelectorView: CounterySelectorView) {
         self.counterySelectorView = counterySelectorView
     }
     
@@ -24,7 +25,7 @@ class CountrySelectorPresenter: NSObject {
             if let name = Locale.autoupdatingCurrent.localizedString(forRegionCode: code) {
                 do {
                 let phoneNumberExample =  try phoneUtil.getExampleNumber(forType: code, type: .MOBILE)
-                    countries.append(Country(name: name, code: code, phoneCode:"+\(phoneUtil.getCountryCode(forRegion: code) ?? 0)", phoneNumberExample: "\(phoneNumberExample.nationalNumber.stringValue)", counterFlag: code.lowercased()))
+                    countries.append(Country(name: name, code: code, phoneCode:"+\(phoneUtil.getCountryCode(forRegion: code) ?? 0)", phoneNumberExample: "\(phoneNumberExample.nationalNumber.stringValue)", counterFlag: UIImage(named: code.lowercased(), in: bundle, compatibleWith: nil)))
                 }  catch _ {
                     
                 }

@@ -47,14 +47,15 @@ public class CounterySelectorSearchBar: UIView {
     }
     
     func registerCell() {
-        counteryTableView.register(UINib(nibName: cellReuseIdentifier, bundle: nil), forCellReuseIdentifier: cellReuseIdentifier )
+         let bundle = Bundle(for: CounterySelectorTableViewCell.classForCoder())
+        counteryTableView.register(UINib(nibName: cellReuseIdentifier, bundle: bundle), forCellReuseIdentifier: cellReuseIdentifier )
     }
     
 }
 
 extension CounterySelectorSearchBar {
     
-    func showAlertViewController(parent: UIViewController, actionSheetStyle: UIAlertController.Style = .actionSheet, hideSarchBar: Bool = false, cancelTitle:String = "Cancel", searchTitle: String = "Search for country") {
+    public func showAlertViewController(parent: UIViewController, actionSheetStyle: UIAlertController.Style = .actionSheet, hideSarchBar: Bool = false, cancelTitle:String = "Cancel", searchTitle: String = "Search for country") {
         let alertController = UIAlertController(title:"", message: nil, preferredStyle: actionSheetStyle)
         let customView = CounterySelectorSearchBar(frame: CGRect(x: 0, y: 0, width: alertController.view.frame.width, height: 200))
         customView.delegate = parent as? CounterySelectorDelegate

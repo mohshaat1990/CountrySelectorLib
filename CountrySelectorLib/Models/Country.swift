@@ -5,13 +5,13 @@
 //  Created by MoHamed Shaat on 1/24/19.
 //  Copyright © 2019 shaat. All rights reserved.
 //
-
+import UIKit
 import Foundation
 
-struct Country {
-    let name: String
-    let code: String
-    let phoneCode: String
-    let phoneNumberExample: String
-    let counterFlag: String
+public struct Country {
+   public let name: String
+   public let code: String
+   public let phoneCode: String
+   public let phoneNumberExample: String
+   public let counterFlag: UIImage?
 }

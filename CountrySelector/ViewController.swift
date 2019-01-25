@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 extension ViewController: CounterySelectorDelegate {
     
     func selectCountery(countery: Country) {
-        self.counteryImage.image = UIImage(named: countery.counterFlag)
+        self.counteryImage.image = countery.counterFlag
         self.countryNameLabel.text = countery.name
         self.counteryCodeLabel.text = countery.phoneCode
         self.mobileNumberExample.text = countery.phoneNumberExample
