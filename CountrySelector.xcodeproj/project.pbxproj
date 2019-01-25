@@ -264,7 +264,6 @@
 		E512DE3421FB2E8E00EF27A1 /* wf.png in Resources */ = {isa = PBXBuildFile; fileRef = E512DD1F21FB2E8E00EF27A1 /* wf.png */; };
 		E512DE3521FB2E8E00EF27A1 /* vu.png in Resources */ = {isa = PBXBuildFile; fileRef = E512DD2021FB2E8E00EF27A1 /* vu.png */; };
 		E512DE3621FB2E8E00EF27A1 /* tj.png in Resources */ = {isa = PBXBuildFile; fileRef = E512DD2121FB2E8E00EF27A1 /* tj.png */; };
-		E512DE3721FB2E8E00EF27A1 /* CounterySelectorAssests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E512DD2221FB2E8E00EF27A1 /* CounterySelectorAssests.xcassets */; };
 		E512DE3821FB2E8E00EF27A1 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD2421FB2E8E00EF27A1 /* Country.swift */; };
 		E512DE3921FB2E8E00EF27A1 /* CountrySelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD2621FB2E8E00EF27A1 /* CountrySelectorPresenter.swift */; };
 		E512DE3A21FB2E8E00EF27A1 /* CounterySelectorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E512DD2821FB2E8E00EF27A1 /* CounterySelectorTableViewCell.xib */; };
@@ -279,6 +278,9 @@
 		E512DE4321FB2E8E00EF27A1 /* ExtensionUiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD3221FB2E8E00EF27A1 /* ExtensionUiViewController.swift */; };
 		E512DE4421FB2E8E00EF27A1 /* CounterySelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD3421FB2E8E00EF27A1 /* CounterySelectorDelegate.swift */; };
 		E512DE4521FB2E8E00EF27A1 /* CounterSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD3521FB2E8E00EF27A1 /* CounterSelectorView.swift */; };
+		E527CB1C21FBAD2B005A5AB1 /* ic_remove.png in Resources */ = {isa = PBXBuildFile; fileRef = E527CB1921FBAD2B005A5AB1 /* ic_remove.png */; };
+		E527CB1D21FBAD2B005A5AB1 /* ic_remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E527CB1A21FBAD2B005A5AB1 /* ic_remove@2x.png */; };
+		E527CB1E21FBAD2B005A5AB1 /* ic_remove@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E527CB1B21FBAD2B005A5AB1 /* ic_remove@3x.png */; };
 		E5F0739021ED40A0008ABC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0738F21ED40A0008ABC6A /* AppDelegate.swift */; };
 		E5F0739221ED40A0008ABC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0739121ED40A0008ABC6A /* ViewController.swift */; };
 		E5F0739521ED40A0008ABC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F0739321ED40A0008ABC6A /* Main.storyboard */; };
@@ -567,7 +569,6 @@
 		E512DD1F21FB2E8E00EF27A1 /* wf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wf.png; sourceTree = "<group>"; };
 		E512DD2021FB2E8E00EF27A1 /* vu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vu.png; sourceTree = "<group>"; };
 		E512DD2121FB2E8E00EF27A1 /* tj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj.png; sourceTree = "<group>"; };
-		E512DD2221FB2E8E00EF27A1 /* CounterySelectorAssests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CounterySelectorAssests.xcassets; sourceTree = "<group>"; };
 		E512DD2421FB2E8E00EF27A1 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		E512DD2621FB2E8E00EF27A1 /* CountrySelectorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountrySelectorPresenter.swift; sourceTree = "<group>"; };
 		E512DD2821FB2E8E00EF27A1 /* CounterySelectorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CounterySelectorTableViewCell.xib; sourceTree = "<group>"; };
@@ -582,6 +583,9 @@
 		E512DD3221FB2E8E00EF27A1 /* ExtensionUiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUiViewController.swift; sourceTree = "<group>"; };
 		E512DD3421FB2E8E00EF27A1 /* CounterySelectorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterySelectorDelegate.swift; sourceTree = "<group>"; };
 		E512DD3521FB2E8E00EF27A1 /* CounterSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterSelectorView.swift; sourceTree = "<group>"; };
+		E527CB1921FBAD2B005A5AB1 /* ic_remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_remove.png; path = CounterySelectorAssests.xcassets/ic_remove.imageset/ic_remove.png; sourceTree = "<group>"; };
+		E527CB1A21FBAD2B005A5AB1 /* ic_remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_remove@2x.png"; path = "CounterySelectorAssests.xcassets/ic_remove.imageset/ic_remove@2x.png"; sourceTree = "<group>"; };
+		E527CB1B21FBAD2B005A5AB1 /* ic_remove@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_remove@3x.png"; path = "CounterySelectorAssests.xcassets/ic_remove.imageset/ic_remove@3x.png"; sourceTree = "<group>"; };
 		E5F0738C21ED40A0008ABC6A /* CountrySelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountrySelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5F0738F21ED40A0008ABC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5F0739121ED40A0008ABC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -656,8 +660,10 @@
 		E512DC1F21FB2E8D00EF27A1 /* Assests */ = {
 			isa = PBXGroup;
 			children = (
+				E527CB1921FBAD2B005A5AB1 /* ic_remove.png */,
+				E527CB1A21FBAD2B005A5AB1 /* ic_remove@2x.png */,
+				E527CB1B21FBAD2B005A5AB1 /* ic_remove@3x.png */,
 				E512DC2021FB2E8D00EF27A1 /* flags */,
-				E512DD2221FB2E8E00EF27A1 /* CounterySelectorAssests.xcassets */,
 			);
 			path = Assests;
 			sourceTree = "<group>";
@@ -1210,6 +1216,7 @@
 				E512DDC921FB2E8E00EF27A1 /* sj.png in Resources */,
 				E512DD3A21FB2E8E00EF27A1 /* ni.png in Resources */,
 				E512DD4021FB2E8E00EF27A1 /* aq.png in Resources */,
+				E527CB1E21FBAD2B005A5AB1 /* ic_remove@3x.png in Resources */,
 				E512DD6E21FB2E8E00EF27A1 /* ye.png in Resources */,
 				E512DE2E21FB2E8E00EF27A1 /* bg.png in Resources */,
 				E512DDED21FB2E8E00EF27A1 /* it.png in Resources */,
@@ -1232,7 +1239,6 @@
 				E512DD9C21FB2E8E00EF27A1 /* pn.png in Resources */,
 				E512DD5921FB2E8E00EF27A1 /* ad.png in Resources */,
 				E512DD7C21FB2E8E00EF27A1 /* mv.png in Resources */,
-				E512DE3721FB2E8E00EF27A1 /* CounterySelectorAssests.xcassets in Resources */,
 				E512DE3521FB2E8E00EF27A1 /* vu.png in Resources */,
 				E512DDF521FB2E8E00EF27A1 /* ao.png in Resources */,
 				E512DD7621FB2E8E00EF27A1 /* by.png in Resources */,
@@ -1263,6 +1269,7 @@
 				E512DD9021FB2E8E00EF27A1 /* sc.png in Resources */,
 				E512DD7E21FB2E8E00EF27A1 /* ug.png in Resources */,
 				E512DE1521FB2E8E00EF27A1 /* xk.png in Resources */,
+				E527CB1D21FBAD2B005A5AB1 /* ic_remove@2x.png in Resources */,
 				E512DD8521FB2E8E00EF27A1 /* gs.png in Resources */,
 				E512DDE421FB2E8E00EF27A1 /* sn.png in Resources */,
 				E512DDB121FB2E8E00EF27A1 /* dm.png in Resources */,
@@ -1393,6 +1400,7 @@
 				E512DDC321FB2E8E00EF27A1 /* hu.png in Resources */,
 				E512DDD721FB2E8E00EF27A1 /* pg.png in Resources */,
 				E512DE3C21FB2E8E00EF27A1 /* CounterySelectorSearchBar.xib in Resources */,
+				E527CB1C21FBAD2B005A5AB1 /* ic_remove.png in Resources */,
 				E512DE0921FB2E8E00EF27A1 /* bw.png in Resources */,
 				E512DD9521FB2E8E00EF27A1 /* gf.png in Resources */,
 				E512DD6A21FB2E8E00EF27A1 /* ci.png in Resources */,
