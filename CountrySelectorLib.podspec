@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CountrySelectorLib'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'CountrySelectorLib is library for select country code and flag with multiple ios controls ex actionAheet , alertview and searchController'
   s.description      = <<-DESC
 CountrySelectorLib is library for select country code and flag with multiple ios controls ex actionAheet , alertview and searchController
@@ -15,6 +15,6 @@ DESC
   s.ios.deployment_target = '10.0'
   s.source_files = 'CountrySelectorLib/**/*.{lproj,storyboard,xcdatamodeld,xib,json,swift}'
   s.dependency 'libPhoneNumber-iOS'
- s.resources = 'CountrySelectorLib/**/*.{xcassets,png}'
+ s.resources = 'CountrySelectorLib/**/*.{xcassets,png,json}'
  
 end
