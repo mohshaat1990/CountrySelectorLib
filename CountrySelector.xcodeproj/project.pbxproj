@@ -266,7 +266,7 @@
 		E512DE3621FB2E8E00EF27A1 /* tj.png in Resources */ = {isa = PBXBuildFile; fileRef = E512DD2121FB2E8E00EF27A1 /* tj.png */; };
 		E512DE3721FB2E8E00EF27A1 /* CounterySelectorAssests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E512DD2221FB2E8E00EF27A1 /* CounterySelectorAssests.xcassets */; };
 		E512DE3821FB2E8E00EF27A1 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD2421FB2E8E00EF27A1 /* Country.swift */; };
-		E512DE3921FB2E8E00EF27A1 /* CounterySelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD2621FB2E8E00EF27A1 /* CounterySelectorPresenter.swift */; };
+		E512DE3921FB2E8E00EF27A1 /* CountrySelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD2621FB2E8E00EF27A1 /* CountrySelectorPresenter.swift */; };
 		E512DE3A21FB2E8E00EF27A1 /* CounterySelectorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E512DD2821FB2E8E00EF27A1 /* CounterySelectorTableViewCell.xib */; };
 		E512DE3B21FB2E8E00EF27A1 /* CounterySelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512DD2921FB2E8E00EF27A1 /* CounterySelectorTableViewCell.swift */; };
 		E512DE3C21FB2E8E00EF27A1 /* CounterySelectorSearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E512DD2A21FB2E8E00EF27A1 /* CounterySelectorSearchBar.xib */; };
@@ -569,7 +569,7 @@
 		E512DD2121FB2E8E00EF27A1 /* tj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj.png; sourceTree = "<group>"; };
 		E512DD2221FB2E8E00EF27A1 /* CounterySelectorAssests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CounterySelectorAssests.xcassets; sourceTree = "<group>"; };
 		E512DD2421FB2E8E00EF27A1 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		E512DD2621FB2E8E00EF27A1 /* CounterySelectorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterySelectorPresenter.swift; sourceTree = "<group>"; };
+		E512DD2621FB2E8E00EF27A1 /* CountrySelectorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountrySelectorPresenter.swift; sourceTree = "<group>"; };
 		E512DD2821FB2E8E00EF27A1 /* CounterySelectorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CounterySelectorTableViewCell.xib; sourceTree = "<group>"; };
 		E512DD2921FB2E8E00EF27A1 /* CounterySelectorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterySelectorTableViewCell.swift; sourceTree = "<group>"; };
 		E512DD2A21FB2E8E00EF27A1 /* CounterySelectorSearchBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CounterySelectorSearchBar.xib; sourceTree = "<group>"; };
@@ -937,7 +937,7 @@
 		E512DD2521FB2E8E00EF27A1 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				E512DD2621FB2E8E00EF27A1 /* CounterySelectorPresenter.swift */,
+				E512DD2621FB2E8E00EF27A1 /* CountrySelectorPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -1472,7 +1472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E512DE3921FB2E8E00EF27A1 /* CounterySelectorPresenter.swift in Sources */,
+				E512DE3921FB2E8E00EF27A1 /* CountrySelectorPresenter.swift in Sources */,
 				E512DE4021FB2E8E00EF27A1 /* ExtensionUINavigationBar.swift in Sources */,
 				E5F0739221ED40A0008ABC6A /* ViewController.swift in Sources */,
 				E512DE4121FB2E8E00EF27A1 /* ExtensionDecodable.swift in Sources */,

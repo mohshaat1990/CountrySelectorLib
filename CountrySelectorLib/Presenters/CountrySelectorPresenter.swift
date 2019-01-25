@@ -9,7 +9,7 @@
 import UIKit
 import libPhoneNumber_iOS
 
-class CounterySelectorPresenter: NSObject {
+class CountrySelectorPresenter: NSObject {
     
    private lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
   var counterySelectorView: CounterySelectorView?
@@ -19,7 +19,6 @@ class CounterySelectorPresenter: NSObject {
     }
     
     func loadCountries() {
-        
         var countries = [Country]()
         for code in Locale.isoRegionCodes as [String] {
             if let name = Locale.autoupdatingCurrent.localizedString(forRegionCode: code) {
@@ -31,7 +30,8 @@ class CounterySelectorPresenter: NSObject {
                 }
             }
         }
-     self.counterySelectorView?.onSucessLoadingCountries(counteries: countries)
+        
+      self.counterySelectorView?.onSucessLoadingCountries(counteries: countries)
     }
     
     func countryName(from countryCode: String) -> String {

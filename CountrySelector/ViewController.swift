@@ -18,18 +18,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func showActionsheet(_ sender: Any) {
-        
-   //  showCounteryCodeViewController(delegate: self)
-      let counterySelectorSearchBar  = CounterySelectorSearchBar()
+      let counterySelectorSearchBar  = CounterySelectorSearchBar(
+        )
         counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .actionSheet)
-      //  counterySelectorSearchBar.pre
-    
        
     }
     
