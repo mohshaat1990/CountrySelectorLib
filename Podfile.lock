@@ -1,0 +1,20 @@
+PODS:
+  - libPhoneNumber-iOS (0.9.13)
+  - LocalizableLib (0.1.6)
+
+DEPENDENCIES:
+  - libPhoneNumber-iOS (~> 0.8)
+  - LocalizableLib (~> 0.1.6)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - libPhoneNumber-iOS
+    - LocalizableLib
+
+SPEC CHECKSUMS:
+  libPhoneNumber-iOS: e444379ac18bbfbdefad571da735b2cd7e096caa
+  LocalizableLib: b8d95c70bb63e7eb5fe46bc4658b90b317f65ae4
+
+PODFILE CHECKSUM: c9867a2422906e84c740edc52706fdbe621a8709
+
+COCOAPODS: 1.6.0.beta.2

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CounterySelectorSearchBar" customModule="CountrySelector" customModuleProvider="target">
+            <connections>
+                <outlet property="counteryTableView" destination="Td0-n7-Wg6" id="S0a-ta-ysy"/>
+                <outlet property="searchBar" destination="CQO-Oy-P51" id="gde-kc-RWP"/>
+                <outlet property="searchBarConstraint" destination="Jhi-A3-3Rj" id="Kh9-dD-chb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="CQO-Oy-P51">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="Jhi-A3-3Rj"/>
+                    </constraints>
+                    <color key="barTintColor" name="alternatingContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Td0-n7-Wg6">
+                    <rect key="frame" x="0.0" y="61" width="375" height="606"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="QTb-5p-sX5"/>
+                        <outlet property="delegate" destination="-1" id="Rlt-e2-kdB"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Td0-n7-Wg6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="5db-ty-9qX"/>
+                <constraint firstItem="CQO-Oy-P51" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MZc-Gd-odT"/>
+                <constraint firstItem="CQO-Oy-P51" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SOc-Ux-8Ab"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Td0-n7-Wg6" secondAttribute="bottom" id="az5-l0-hFC"/>
+                <constraint firstItem="Td0-n7-Wg6" firstAttribute="top" secondItem="CQO-Oy-P51" secondAttribute="bottom" constant="5" id="bRo-C5-Vmz"/>
+                <constraint firstItem="CQO-Oy-P51" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="her-4O-GoK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Td0-n7-Wg6" secondAttribute="trailing" id="lpa-v0-SpQ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="39.200000000000003" y="46.326836581709152"/>
+        </view>
+    </objects>
+</document>
