@@ -16,9 +16,9 @@ import libPhoneNumber_iOS
     var cancelButtonTitle: String = ""
     var viewControllerTitle: String = ""
     var delegate: CounterySelectorDelegate?
-    private var countries:[Country] = [Country]()
-    private var filterCountries:[Country] = [Country]()
-    private lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
+    var countries:[Country] = [Country]()
+    var filterCountries:[Country] = [Country]()
+    lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
     let cellReuseIdentifier = "CounterySelectorTableViewCell"
     
     override func viewDidLoad() {

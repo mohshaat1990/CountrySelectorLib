@@ -15,13 +15,13 @@ public class CounterySelectorSearchBar: UIView {
     
    @IBOutlet weak var counteryTableView: UITableView!
    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
+   @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
     
    let cellReuseIdentifier = "CounterySelectorTableViewCell"
    var delegate: CounterySelectorDelegate?
-   private var countries:[Country] = [Country]()
-   private var filterCountries:[Country] = [Country]()
-   private lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
+   var countries:[Country] = [Country]()
+   var filterCountries:[Country] = [Country]()
+   lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
     
    required init?(coder aDecoder: NSCoder) {
      super.init(coder: aDecoder)
