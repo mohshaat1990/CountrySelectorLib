@@ -41,7 +41,7 @@ public class CounterySelectorSearchBar: UIView {
         self.searchBar.delegate = self
         self.searchBar.placeholder = "Search for country"
         self.searchBar.returnKeyType = .done
-        let counterySelectorPresenter = CounterySelectorPresenter()
+        let counterySelectorPresenter = CountrySelectorPresenter()
         counterySelectorPresenter.attatchView(counterySelectorView:self)
         counterySelectorPresenter.loadCountries()
     }

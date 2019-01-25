@@ -25,7 +25,7 @@ import libPhoneNumber_iOS
         super.viewDidLoad()
         registerCell()
         setupNavigationAndSearchBar()
-        let counterySelectorPresenter = CounterySelectorPresenter()
+        let counterySelectorPresenter = CountrySelectorPresenter()
         counterySelectorPresenter.attatchView(counterySelectorView:self)
         counterySelectorPresenter.loadCountries()
     }
