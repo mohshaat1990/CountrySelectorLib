@@ -38,6 +38,7 @@ public class CounterySelectorSearchBar: UIView {
         registerCell()
         self.counteryTableView.dataSource = self
         self.counteryTableView.delegate = self
+        self.counteryTableView.rowHeight = 44;
         self.searchBar.delegate = self
         self.searchBar.placeholder = "Search for country"
         self.searchBar.returnKeyType = .done

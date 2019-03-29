@@ -24,15 +24,16 @@ class CountrySelectorPresenter: NSObject {
         for code in Locale.isoRegionCodes as [String] {
             if let name = Locale.autoupdatingCurrent.localizedString(forRegionCode: code) {
                 do {
-                let phoneNumberExample =  try phoneUtil.getExampleNumber(forType: code, type: .MOBILE)
-                    countries.append(Country(name: name, code: code, phoneCode:"+\(phoneUtil.getCountryCode(forRegion: code) ?? 0)", phoneNumberExample: "\(phoneNumberExample.nationalNumber.stringValue)", counterFlag: UIImage(named: code.lowercased(), in: bundle, compatibleWith: nil)))
+                    let phoneNumberExample =  try phoneUtil.getExampleNumber(forType: code, type: .MOBILE)
+                    guard let imageURL = bundle.url(forResource: code.lowercased(), withExtension: "png") else { return }
+                    countries.append(Country(name: name, code: code, phoneCode:"+\(phoneUtil.getCountryCode(forRegion: code) ?? 0)", phoneNumberExample: "\(phoneNumberExample.nationalNumber.stringValue)", counterFlag: UIImage(contentsOfFile: imageURL.path)))
                 }  catch _ {
                     
                 }
             }
         }
         
-      self.counterySelectorView?.onSucessLoadingCountries(counteries: countries)
+        self.counterySelectorView?.onSucessLoadingCountries(counteries: countries)
     }
     
     func countryName(from countryCode: String) -> String {

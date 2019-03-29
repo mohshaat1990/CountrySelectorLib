@@ -281,6 +281,8 @@
 		E527CB2221FBB5BD005A5AB1 /* ic_remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E527CB1F21FBB5BC005A5AB1 /* ic_remove@2x.png */; };
 		E527CB2321FBB5BD005A5AB1 /* ic_remove@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E527CB2021FBB5BD005A5AB1 /* ic_remove@3x.png */; };
 		E527CB2421FBB5BD005A5AB1 /* ic_remove.png in Resources */ = {isa = PBXBuildFile; fileRef = E527CB2121FBB5BD005A5AB1 /* ic_remove.png */; };
+		E591230A224A6B80000D9D22 /* CounterySelectorDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5912308224A6B7F000D9D22 /* CounterySelectorDialogViewController.swift */; };
+		E591230B224A6B80000D9D22 /* CounterySelectorDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5912309224A6B7F000D9D22 /* CounterySelectorDialogViewController.xib */; };
 		E5F0739021ED40A0008ABC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0738F21ED40A0008ABC6A /* AppDelegate.swift */; };
 		E5F0739221ED40A0008ABC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0739121ED40A0008ABC6A /* ViewController.swift */; };
 		E5F0739521ED40A0008ABC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F0739321ED40A0008ABC6A /* Main.storyboard */; };
@@ -586,6 +588,8 @@
 		E527CB1F21FBB5BC005A5AB1 /* ic_remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_remove@2x.png"; sourceTree = "<group>"; };
 		E527CB2021FBB5BD005A5AB1 /* ic_remove@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_remove@3x.png"; sourceTree = "<group>"; };
 		E527CB2121FBB5BD005A5AB1 /* ic_remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_remove.png; sourceTree = "<group>"; };
+		E5912308224A6B7F000D9D22 /* CounterySelectorDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterySelectorDialogViewController.swift; sourceTree = "<group>"; };
+		E5912309224A6B7F000D9D22 /* CounterySelectorDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterySelectorDialogViewController.xib; sourceTree = "<group>"; };
 		E5F0738C21ED40A0008ABC6A /* CountrySelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountrySelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5F0738F21ED40A0008ABC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5F0739121ED40A0008ABC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -957,6 +961,8 @@
 				E512DD2B21FB2E8E00EF27A1 /* CounterySelectorSearchBar.swift */,
 				E512DD2C21FB2E8E00EF27A1 /* CounterySelectorSearchViewController.swift */,
 				E512DD2D21FB2E8E00EF27A1 /* CounterySelectorSearchViewController.xib */,
+				E5912308224A6B7F000D9D22 /* CounterySelectorDialogViewController.swift */,
+				E5912309224A6B7F000D9D22 /* CounterySelectorDialogViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1378,6 +1384,7 @@
 				E512DD4221FB2E8E00EF27A1 /* gb-sct.png in Resources */,
 				E512DDAA21FB2E8E00EF27A1 /* se.png in Resources */,
 				E512DE2221FB2E8E00EF27A1 /* np.png in Resources */,
+				E591230B224A6B80000D9D22 /* CounterySelectorDialogViewController.xib in Resources */,
 				E512DD6221FB2E8E00EF27A1 /* mt.png in Resources */,
 				E512DD4E21FB2E8E00EF27A1 /* mf.png in Resources */,
 				E512DDEF21FB2E8E00EF27A1 /* sz.png in Resources */,
@@ -1480,6 +1487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E591230A224A6B80000D9D22 /* CounterySelectorDialogViewController.swift in Sources */,
 				E512DE3921FB2E8E00EF27A1 /* CountrySelectorPresenter.swift in Sources */,
 				E512DE4021FB2E8E00EF27A1 /* ExtensionUINavigationBar.swift in Sources */,
 				E5F0739221ED40A0008ABC6A /* ViewController.swift in Sources */,

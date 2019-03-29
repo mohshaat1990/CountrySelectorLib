@@ -21,15 +21,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showActionsheet(_ sender: Any) {
-      let counterySelectorSearchBar  = CounterySelectorSearchBar(
-        )
-        counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .actionSheet)
-       
+      let counterySelectorSearchBar  = CounterySelectorSearchBar()
+      counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .actionSheet)
     }
     
     @IBAction func showAlert(_ sender: Any) {
-        let counterySelectorSearchBar  = CounterySelectorSearchBar()
-        counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .alert)
+     let counterySelectorSearchBar  = CounterySelectorSearchBar()
+    counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .alert)
     }
     
     @IBAction func showSearchController(_ sender: Any) {
