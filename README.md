@@ -9,7 +9,7 @@
 using pods
 
 ```bash
-pod 'CountrySelectorLib', '~> 0.1.7'
+pod 'CountrySelectorLib', '~> 0.1.8'
 ```
 
 ## Usage
@@ -57,6 +57,14 @@ showCounteryCodeViewController(delegate: self)
 ```swift
 showCounteryCodeViewController(delegate: self, cancelTitle: "Cancel", searchPlaceHolder: "Search", viewControllerTilte: "Search For Country")
 ```
+# to get specific country 
+
+ ```swift
+ let counterySelectorSearchBar  = CounterySelectorSearchBar()
+ counterySelectorSearchBar.delegate = self
+ counterySelectorSearchBar.getCountry(withRegionCode:"eg")
+```
+
 # you should implement Delegate 
 
 ```swift
@@ -66,7 +74,16 @@ extension ViewController: CounterySelectorDelegate {
         self.countryNameLabel.text = countery.name
         self.counteryCodeLabel.text = countery.phoneCode
         self.mobileNumberExample.text = countery.phoneNumberExample
-       self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func selectCountery(regionCode: String, country: Country?) {
+       if let country = country {
+       self.counteryImage.image = country.counterFlag
+       self.countryNameLabel.text = country.name
+       self.counteryCodeLabel.text = country.phoneCode
+       self.mobileNumberExample.text = country.phoneNumberExample
+     }
     }
 }
 ```

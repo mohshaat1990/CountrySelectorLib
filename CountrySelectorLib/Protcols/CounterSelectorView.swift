@@ -10,4 +10,6 @@ import Foundation
 
 protocol CounterySelectorView {
     func onSucessLoadingCountries(counteries: [Country])
+    func onSucessLoadingCountry(regionCode: String, country: Country?)
+    
 }

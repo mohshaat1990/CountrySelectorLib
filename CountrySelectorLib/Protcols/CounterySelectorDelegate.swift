@@ -1,4 +1,5 @@
 
 public protocol CounterySelectorDelegate {
-    func selectCountery(countery:Country)
+    func selectCountery(country: Country)
+    func selectCountery(regionCode: String, country: Country?)
 }

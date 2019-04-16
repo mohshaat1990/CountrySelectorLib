@@ -18,34 +18,46 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let counterySelectorSearchBar  = CounterySelectorSearchBar()
+        counterySelectorSearchBar.delegate = self
+        counterySelectorSearchBar.getCountry(withRegionCode:"eg")
     }
     
     @IBAction func showActionsheet(_ sender: Any) {
-      let counterySelectorSearchBar  = CounterySelectorSearchBar()
-      counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .actionSheet)
+        let counterySelectorSearchBar  = CounterySelectorSearchBar()
+        counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .actionSheet)
     }
     
     @IBAction func showAlert(_ sender: Any) {
-     let counterySelectorSearchBar  = CounterySelectorSearchBar()
-    counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .alert)
+        let counterySelectorSearchBar  = CounterySelectorSearchBar()
+        counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .alert)
     }
     
     @IBAction func showSearchController(_ sender: Any) {
         showCounteryCodeViewController(delegate: self)
     }
     
-
-
+    
+    
 }
 
 extension ViewController: CounterySelectorDelegate {
     
-    func selectCountery(countery: Country) {
-        self.counteryImage.image = countery.counterFlag
-        self.countryNameLabel.text = countery.name
-        self.counteryCodeLabel.text = countery.phoneCode
-        self.mobileNumberExample.text = countery.phoneNumberExample
-      self.dismiss(animated: true, completion: nil)
+    func selectCountery(regionCode: String, country: Country?) {
+        if let country = country {
+            self.counteryImage.image = country.counterFlag
+            self.countryNameLabel.text = country.name
+            self.counteryCodeLabel.text = country.phoneCode
+            self.mobileNumberExample.text = country.phoneNumberExample
+        }
+    }
+    
+    func selectCountery(country: Country) {
+        self.counteryImage.image = country.counterFlag
+        self.countryNameLabel.text = country.name
+        self.counteryCodeLabel.text = country.phoneCode
+        self.mobileNumberExample.text = country.phoneNumberExample
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

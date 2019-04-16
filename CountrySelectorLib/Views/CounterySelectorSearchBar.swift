@@ -13,21 +13,21 @@ import libPhoneNumber_iOS
 
 public class CounterySelectorSearchBar: UIView {
     
-   @IBOutlet weak var counteryTableView: UITableView!
-   @IBOutlet weak var searchBar: UISearchBar!
-   @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
+    @IBOutlet weak var counteryTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
     
-   let cellReuseIdentifier = "CounterySelectorTableViewCell"
-   var delegate: CounterySelectorDelegate?
-   var countries:[Country] = [Country]()
-   var filterCountries:[Country] = [Country]()
-   lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
+    let cellReuseIdentifier = "CounterySelectorTableViewCell"
+    var delegate: CounterySelectorDelegate?
+    var countries:[Country] = [Country]()
+    var filterCountries:[Country] = [Country]()
+    lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
     
-   required init?(coder aDecoder: NSCoder) {
-     super.init(coder: aDecoder)
-     setupXib()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupXib()
     }
- 
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
         setupXib()
@@ -48,8 +48,14 @@ public class CounterySelectorSearchBar: UIView {
     }
     
     func registerCell() {
-         let bundle = Bundle(for: CounterySelectorTableViewCell.classForCoder())
+        let bundle = Bundle(for: CounterySelectorTableViewCell.classForCoder())
         counteryTableView.register(UINib(nibName: cellReuseIdentifier, bundle: bundle), forCellReuseIdentifier: cellReuseIdentifier )
+    }
+    
+    func getCountry (withRegionCode: String) {
+        let counterySelectorPresenter = CountrySelectorPresenter()
+        counterySelectorPresenter.attatchView(counterySelectorView:self)
+        counterySelectorPresenter.getCountry(withRegionCode: withRegionCode)
     }
     
 }
@@ -62,7 +68,7 @@ extension CounterySelectorSearchBar {
         customView.delegate = parent as? CounterySelectorDelegate
         customView.searchBar.placeholder = searchTitle
         if hideSarchBar == true {
-         customView.searchBarConstraint.constant = 0
+            customView.searchBarConstraint.constant = 0
         }
         alertController.view.addSubview(customView)
         customView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,9 +76,9 @@ extension CounterySelectorSearchBar {
         customView.rightAnchor.constraint(equalTo: alertController.view.rightAnchor, constant: -10).isActive = true
         customView.leftAnchor.constraint(equalTo: alertController.view.leftAnchor, constant: 10).isActive = true
         if actionSheetStyle == .actionSheet {
-        customView.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -70).isActive = true
+            customView.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -70).isActive = true
         } else {
-        customView.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -50).isActive = true
+            customView.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -50).isActive = true
         }
         //customView.heightAnchor.constraint(equalToConstant: 320).isActive = true
         alertController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +87,7 @@ extension CounterySelectorSearchBar {
         alertController.addAction(cancelAction)
         parent.present(alertController, animated: true, completion:{})
     }
-
+    
     
 }
 
@@ -99,7 +105,7 @@ extension CounterySelectorSearchBar: UITableViewDataSource, UITableViewDelegate 
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let delegate = delegate {
-            delegate.selectCountery(countery: filterCountries[indexPath.row])
+            delegate.selectCountery(country: filterCountries[indexPath.row])
         }
     }
     
@@ -107,13 +113,13 @@ extension CounterySelectorSearchBar: UITableViewDataSource, UITableViewDelegate 
 }
 
 extension CounterySelectorSearchBar:UISearchBarDelegate {
-
-   public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
-   public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-      filterContentForSearchText(searchText:searchText)
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterContentForSearchText(searchText:searchText)
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
@@ -122,13 +128,17 @@ extension CounterySelectorSearchBar:UISearchBarDelegate {
                 return   countery.name.lowercased().contains(searchText.lowercased())
             }
         } else {
-           self.filterCountries = self.countries}
-         self.counteryTableView.reloadData()
+            self.filterCountries = self.countries}
+        self.counteryTableView.reloadData()
     }
     
 }
 
 extension CounterySelectorSearchBar: CounterySelectorView {
+    
+    func onSucessLoadingCountry(regionCode: String, country: Country?) {
+            delegate?.selectCountery(regionCode: regionCode, country: country)
+    }
     
     func onSucessLoadingCountries(counteries: [Country]) {
         self.countries = counteries

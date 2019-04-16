@@ -50,6 +50,12 @@ import libPhoneNumber_iOS
         }
     }
    
+    func getCountry (withRegionCode: String) {
+        let counterySelectorPresenter = CountrySelectorPresenter()
+        counterySelectorPresenter.attatchView(counterySelectorView:self)
+        counterySelectorPresenter.getCountry(withRegionCode: withRegionCode)
+    }
+    
     @IBAction func dismissAction(_ sender: Any) {
         self.dismiss(animated:true, completion: nil)
     }
@@ -118,12 +124,16 @@ extension CounterySelectorSearchViewController: UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let delegate = delegate {
-         delegate.selectCountery(countery: filterCountries[indexPath.row])
+         delegate.selectCountery(country: filterCountries[indexPath.row])
         }
     }
 }
 
 extension CounterySelectorSearchViewController: CounterySelectorView {
+    
+    func onSucessLoadingCountry(regionCode: String, country: Country?) {
+        delegate?.selectCountery(regionCode: regionCode, country: country)
+    }
     
     func onSucessLoadingCountries(counteries: [Country]) {
         self.countries = counteries
