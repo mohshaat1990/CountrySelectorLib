@@ -9,7 +9,7 @@
 using pods
 
 ```bash
-pod 'CountrySelectorLib', '~> 0.1.8'
+pod 'CountrySelectorLib', '~> 0.1.9'
 ```
 
 ## Usage
