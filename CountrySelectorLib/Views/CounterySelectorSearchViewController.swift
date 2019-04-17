@@ -15,7 +15,7 @@ import libPhoneNumber_iOS
     var searchBarPlaceHolder: String = ""
     var cancelButtonTitle: String = ""
     var viewControllerTitle: String = ""
-    var delegate: CounterySelectorDelegate?
+    public var delegate: CounterySelectorDelegate?
     var countries:[Country] = [Country]()
     var filterCountries:[Country] = [Country]()
     lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
@@ -50,7 +50,7 @@ import libPhoneNumber_iOS
         }
     }
    
-    func getCountry (withRegionCode: String) {
+    public func getCountry (withRegionCode: String) {
         let counterySelectorPresenter = CountrySelectorPresenter()
         counterySelectorPresenter.attatchView(counterySelectorView:self)
         counterySelectorPresenter.getCountry(withRegionCode: withRegionCode)

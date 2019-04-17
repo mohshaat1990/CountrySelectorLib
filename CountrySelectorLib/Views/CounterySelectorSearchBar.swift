@@ -18,7 +18,7 @@ public class CounterySelectorSearchBar: UIView {
     @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
     
     let cellReuseIdentifier = "CounterySelectorTableViewCell"
-    var delegate: CounterySelectorDelegate?
+    public var delegate: CounterySelectorDelegate?
     var countries:[Country] = [Country]()
     var filterCountries:[Country] = [Country]()
     lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
@@ -52,7 +52,7 @@ public class CounterySelectorSearchBar: UIView {
         counteryTableView.register(UINib(nibName: cellReuseIdentifier, bundle: bundle), forCellReuseIdentifier: cellReuseIdentifier )
     }
     
-    func getCountry (withRegionCode: String) {
+    public func getCountry (withRegionCode: String) {
         let counterySelectorPresenter = CountrySelectorPresenter()
         counterySelectorPresenter.attatchView(counterySelectorView:self)
         counterySelectorPresenter.getCountry(withRegionCode: withRegionCode)
