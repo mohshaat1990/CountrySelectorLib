@@ -16,18 +16,18 @@ import libPhoneNumber_iOS
     var cancelButtonTitle: String = ""
     var viewControllerTitle: String = ""
     public var delegate: CounterySelectorDelegate?
-    var countries:[Country] = [Country]()
-    var filterCountries:[Country] = [Country]()
+    var countries:[Character : [Country]] = [Character : [Country]]()
+    var filterCountries:[Character : [Country]] = [Character : [Country]]()
+    var filterCountriesKeys = [Character]()
     lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
     let cellReuseIdentifier = "CounterySelectorTableViewCell"
-    
+    let counterySelectorPresenter = CountrySelectorPresenter()
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
         setupNavigationAndSearchBar()
-        let counterySelectorPresenter = CountrySelectorPresenter()
         counterySelectorPresenter.attatchView(counterySelectorView:self)
-        counterySelectorPresenter.loadCountries()
+        counterySelectorPresenter.loadCountries(searchText: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,13 +59,7 @@ import libPhoneNumber_iOS
     @IBAction func dismissAction(_ sender: Any) {
         self.dismiss(animated:true, completion: nil)
     }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
-    
-  
-    
+
     func setupNavigationAndSearchBar() {
         if #available(iOS 11.0, *) {
             let searchController = UISearchController(searchResultsController: nil)
@@ -111,31 +105,40 @@ import libPhoneNumber_iOS
 
 extension CounterySelectorSearchViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filterCountries.count
+    public func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return filterCountriesKeys.map { String($0) }
+    }
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return filterCountriesKeys.count
+    }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filterCountries[filterCountriesKeys[section]]!.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return String(describing:filterCountriesKeys[section])
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:cellReuseIdentifier) as! CounterySelectorTableViewCell
-        cell.setupCell(countery: filterCountries[indexPath.row])
+        cell.setupCell(countery:filterCountries[filterCountriesKeys[indexPath.section]]![indexPath.row])
         return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let delegate = delegate {
-         delegate.selectCountery(country: filterCountries[indexPath.row])
+            delegate.selectCountery(country: filterCountries[filterCountriesKeys[indexPath.section]]![indexPath.row])
         }
     }
 }
 
 extension CounterySelectorSearchViewController: CounterySelectorView {
-    
     func onSucessLoadingCountry(regionCode: String, country: Country?) {
         delegate?.selectCountery(regionCode: regionCode, country: country)
     }
     
-    func onSucessLoadingCountries(counteries: [Country]) {
+    func onSucessLoadingCountries(counteries: [Character : [Country]]) {
+        filterCountriesKeys = Array(counteries.keys).sorted()
         self.countries = counteries
         self.filterCountries = countries
         self.counteryTableView.reloadData()
@@ -149,18 +152,7 @@ extension CounterySelectorSearchViewController:UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filterContentForSearchText(searchText:searchText)
+      counterySelectorPresenter.loadCountries(searchText: searchText)
     }
-    
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
-        if searchText != "" {
-            filterCountries = countries.filter {countery in
-                return   countery.name.lowercased().contains(searchText.lowercased())
-            }
-        } else {
-            self.filterCountries = self.countries}
-        self.counteryTableView.reloadData()
-    }
-    
 }
 

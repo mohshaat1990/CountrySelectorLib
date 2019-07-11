@@ -19,15 +19,17 @@ class CountrySelectorPresenter: NSObject {
         self.counterySelectorView = counterySelectorView
     }
     
-    func loadCountries() {
+    func loadCountries(searchText: String) {
         var countries = [Country]()
         for code in Locale.isoRegionCodes as [String] {
             let country = loadCountry(regionCode: code)
-            if let country = country {
+            if let country = country, (country.name.lowercased().contains(searchText.lowercased()) || searchText == "") {
              countries.append(country)
             }
         }
-        self.counterySelectorView?.onSucessLoadingCountries(counteries: countries)
+        countries = countries.sorted { $0.name < $1.name }
+        let dictionary = Dictionary(grouping: countries, by: { $0.name.first! })
+        self.counterySelectorView?.onSucessLoadingCountries(counteries: dictionary)
     }
     
     func getCountry (withRegionCode: String) {

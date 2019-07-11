@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CounterySelectorView {
-    func onSucessLoadingCountries(counteries: [Country])
+    func onSucessLoadingCountries(counteries: [Character : [Country]])
     func onSucessLoadingCountry(regionCode: String, country: Country?)
     
 }

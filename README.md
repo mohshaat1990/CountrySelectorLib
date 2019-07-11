@@ -4,19 +4,20 @@
 - Support localization 
 - Support multiple controls ActionSheet , UIAlertViewController , SearchBarController
 
+
 ## Installation
 
 using pods
 
 ```bash
-pod 'CountrySelectorLib', '~> 0.1.10'
+pod 'CountrySelectorLib', '~> 0.1.11'
 ```
 
 ## Usage
 
 #  Action Sheet
 
-![action sheet](https://user-images.githubusercontent.com/11280137/51776196-e0fe7580-2100-11e9-9e00-8f5d2516cbf9.gif)
+![actionsheetGif](https://user-images.githubusercontent.com/11280137/61086244-a11f1680-a432-11e9-8910-e99fd7925a61.gif)
 
 ```swift
 import CountrySelectorLib
@@ -31,7 +32,8 @@ import CountrySelectorLib
 ```
 #  Alert View
 
-![alertview](https://user-images.githubusercontent.com/11280137/51776222-f4a9dc00-2100-11e9-9a34-0a433b540a06.gif)
+![alertViewControllerGif](https://user-images.githubusercontent.com/11280137/61086242-9fede980-a432-11e9-9818-4c282a4efe56.gif)
+
 ```swift
 import CountrySelectorLib
 
@@ -46,7 +48,7 @@ import CountrySelectorLib
 
 #  SearchBarController
 
-![serachviewcontroller](https://user-images.githubusercontent.com/11280137/51776223-f5db0900-2100-11e9-9587-cd269904f289.gif)
+![searchViewController](https://user-images.githubusercontent.com/11280137/61086234-982e4500-a432-11e9-9b5c-8437f4a227c4.gif)
 
 ```swift
 import CountrySelectorLib
