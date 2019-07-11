@@ -12,7 +12,6 @@ public class CounterySelectorSearchBar: UIView {
     @IBOutlet weak var counteryTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
-    
     let cellReuseIdentifier = "CounterySelectorTableViewCell"
     public var delegate: CounterySelectorDelegate?
     var countries:[Character : [Country]] = [Character : [Country]]()
@@ -20,7 +19,8 @@ public class CounterySelectorSearchBar: UIView {
     var filterCountriesKeys = [Character]()
     lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
     let counterySelectorPresenter = CountrySelectorPresenter()
-    required init?(coder aDecoder: NSCoder) {
+    
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupXib()
     }
@@ -59,7 +59,6 @@ public class CounterySelectorSearchBar: UIView {
 }
 
 extension CounterySelectorSearchBar {
-    
     public func showAlertViewController(parent: UIViewController, actionSheetStyle: UIAlertController.Style = .actionSheet, hideSarchBar: Bool = false, cancelTitle:String = "Cancel", searchTitle: String = "Search for country") {
         let alertController = UIAlertController(title:"", message: nil, preferredStyle: actionSheetStyle)
         let customView = CounterySelectorSearchBar(frame: CGRect(x: 0, y: 0, width: alertController.view.frame.width, height: 200))

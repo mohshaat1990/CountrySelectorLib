@@ -12,7 +12,7 @@ DESC
   s.author           = { '<MOHAMED MAHMOUD>' => '<mohamed.sh3t90@gmail.com>' }
   s.source           = { :git => 'https://github.com/sh3at90/CountrySelectorLib.git', :tag => s.version.to_s  }
  
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.4'
   s.source_files = 'CountrySelectorLib/**/*.{lproj,storyboard,xcdatamodeld,xib,json,swift}'
   s.dependency 'libPhoneNumber-iOS'
  s.resources = 'CountrySelectorLib/**/*.{xcassets,png,json}'
