@@ -1,6 +1,7 @@
 # CountrySelectorLib
 
 - Choose the country (flag, Mobile Code, Mobile Number Example)
+- Choose Currency 
 - Support localization 
 - Support multiple controls ActionSheet , UIAlertViewController , SearchBarController
 
