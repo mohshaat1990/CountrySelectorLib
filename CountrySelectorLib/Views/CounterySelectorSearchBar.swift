@@ -7,6 +7,11 @@
 //
 import UIKit
 import libPhoneNumber_iOS
+
+public enum CountryDataType {
+     case phoneCode
+     case Currency
+}
 public class CounterySelectorSearchBar: UIView {
     
     @IBOutlet weak var counteryTableView: UITableView!
@@ -19,6 +24,7 @@ public class CounterySelectorSearchBar: UIView {
     var filterCountriesKeys = [Character]()
     lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
     let counterySelectorPresenter = CountrySelectorPresenter()
+    public var countryDataType: CountryDataType = .phoneCode
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -59,11 +65,12 @@ public class CounterySelectorSearchBar: UIView {
 }
 
 extension CounterySelectorSearchBar {
-    public func showAlertViewController(parent: UIViewController, actionSheetStyle: UIAlertController.Style = .actionSheet, hideSarchBar: Bool = false, cancelTitle:String = "Cancel", searchTitle: String = "Search for country") {
+    public func showAlertViewController(parent: UIViewController, countryDataType: CountryDataType = .phoneCode, actionSheetStyle: UIAlertController.Style = .actionSheet, hideSarchBar: Bool = false, cancelTitle:String = "Cancel", searchTitle: String = "Search for country") {
         let alertController = UIAlertController(title:"", message: nil, preferredStyle: actionSheetStyle)
         let customView = CounterySelectorSearchBar(frame: CGRect(x: 0, y: 0, width: alertController.view.frame.width, height: 200))
         customView.delegate = parent as? CounterySelectorDelegate
         customView.searchBar.placeholder = searchTitle
+        customView.countryDataType = countryDataType
         if hideSarchBar == true {
             customView.searchBarConstraint.constant = 0
         }
@@ -105,7 +112,7 @@ extension CounterySelectorSearchBar: UITableViewDataSource, UITableViewDelegate 
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:cellReuseIdentifier) as! CounterySelectorTableViewCell
-        cell.setupCell(countery:filterCountries[filterCountriesKeys[indexPath.section]]![indexPath.row])
+        cell.setupCell(countery:filterCountries[filterCountriesKeys[indexPath.section]]![indexPath.row], countryDataType: countryDataType)
         return cell
     }
     

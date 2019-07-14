@@ -10,8 +10,9 @@
 using pods
 
 ```bash
-pod 'CountrySelectorLib', '~> 0.1.11'
+pod 'CountrySelectorLib', '~> 0.1.13'
 ```
+
 
 ## Usage
 
@@ -58,6 +59,15 @@ showCounteryCodeViewController(delegate: self)
 
 ```swift
 showCounteryCodeViewController(delegate: self, cancelTitle: "Cancel", searchPlaceHolder: "Search", viewControllerTilte: "Search For Country")
+```
+# to show Currency 
+
+![currency gif](https://user-images.githubusercontent.com/11280137/61189229-d160f200-a68a-11e9-86a4-c4091839c0d8.gif)
+
+```swift
+let countryData: CountryDataType = .Currency
+let counterySelectorSearchBar  = CounterySelectorSearchBar()
+counterySelectorSearchBar.showAlertViewController(parent:self,countryDataType: countryData,actionSheetStyle: .alert)
 ```
 # to get specific country 
 

@@ -9,7 +9,6 @@
 import UIKit
 import libPhoneNumber_iOS
  class CounterySelectorSearchViewController: UIViewController {
-    
     @IBOutlet weak var counteryTableView: UITableView!
     var searchController: UISearchController!
     var searchBarPlaceHolder: String = ""
@@ -22,6 +21,8 @@ import libPhoneNumber_iOS
     lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
     let cellReuseIdentifier = "CounterySelectorTableViewCell"
     let counterySelectorPresenter = CountrySelectorPresenter()
+    public var countryDataType: CountryDataType = .phoneCode
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
@@ -121,7 +122,7 @@ extension CounterySelectorSearchViewController: UITableViewDataSource, UITableVi
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:cellReuseIdentifier) as! CounterySelectorTableViewCell
-        cell.setupCell(countery:filterCountries[filterCountriesKeys[indexPath.section]]![indexPath.row])
+        cell.setupCell(countery:filterCountries[filterCountriesKeys[indexPath.section]]![indexPath.row], countryDataType: countryDataType)
         return cell
     }
     

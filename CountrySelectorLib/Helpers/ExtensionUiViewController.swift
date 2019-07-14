@@ -9,10 +9,11 @@
 import UIKit
 
 extension UIViewController {
-  public func showCounteryCodeViewController(delegate:CounterySelectorDelegate ,cancelTitle:String = "Cancel", searchPlaceHolder: String = "Search for country", viewControllerTilte: String = "Select country") {
+  public func showCounteryCodeViewController(delegate:CounterySelectorDelegate , countryDataType: CountryDataType = .phoneCode ,cancelTitle:String = "Cancel", searchPlaceHolder: String = "Search for country", viewControllerTilte: String = "Select country") {
         let bundle = Bundle(for: CounterySelectorSearchViewController.classForCoder())
         let counterySelectorSearchViewController = CounterySelectorSearchViewController(nibName: "CounterySelectorSearchViewController", bundle: bundle)
         counterySelectorSearchViewController.viewControllerTitle = viewControllerTilte
+        counterySelectorSearchViewController.countryDataType = countryDataType
         counterySelectorSearchViewController.delegate = delegate
         counterySelectorSearchViewController.searchBarPlaceHolder = searchPlaceHolder
         counterySelectorSearchViewController.cancelButtonTitle = cancelTitle

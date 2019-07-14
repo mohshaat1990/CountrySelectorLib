@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8X9-FX-g9I">
-                                <rect key="frame" x="0.0" y="266" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="326" width="320" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="hm3-ra-2cq"/>
+                                    <constraint firstAttribute="height" constant="50" id="hm3-ra-2cq"/>
                                 </constraints>
                                 <state key="normal" title="ShowActionSheet"/>
                                 <connections>
@@ -29,9 +29,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSv-XA-SyL">
-                                <rect key="frame" x="0.0" y="357" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="397" width="320" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="JJi-io-4sH"/>
+                                    <constraint firstAttribute="height" constant="50" id="JJi-io-4sH"/>
                                 </constraints>
                                 <state key="normal" title="ShowAlert"/>
                                 <connections>
@@ -39,9 +39,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bY8-NJ-IMF">
-                                <rect key="frame" x="0.0" y="448" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="468" width="320" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="EQY-Yw-dW4"/>
+                                    <constraint firstAttribute="height" constant="50" id="EQY-Yw-dW4"/>
                                 </constraints>
                                 <state key="normal" title="ShowSearchController"/>
                                 <connections>

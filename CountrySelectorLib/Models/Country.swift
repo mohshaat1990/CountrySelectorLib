@@ -14,4 +14,5 @@ public struct Country {
    public let phoneCode: String
    public let phoneNumberExample: String
    public let counterFlag: UIImage?
+   public let currency: String
 }

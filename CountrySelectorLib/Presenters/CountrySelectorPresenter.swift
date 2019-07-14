@@ -38,11 +38,12 @@ class CountrySelectorPresenter: NSObject {
     }
     
     func loadCountry(regionCode: String)-> Country? {
+     
         if let name = Locale.autoupdatingCurrent.localizedString(forRegionCode: regionCode) {
             do {
                 guard let imageURL = bundle.url(forResource: regionCode.lowercased(), withExtension: "png") else { return nil }
                 let phoneNumberExample =  try phoneUtil.getExampleNumber(forType: regionCode, type: .MOBILE)
-                let country = Country(name: name, code: regionCode, phoneCode:"+\(phoneUtil.getCountryCode(forRegion: regionCode) ?? 0)", phoneNumberExample: "\(phoneNumberExample.nationalNumber.stringValue)", counterFlag: UIImage(contentsOfFile: imageURL.path ))
+                let country = Country(name: name, code: regionCode, phoneCode:"+\(phoneUtil.getCountryCode(forRegion: regionCode) ?? 0)", phoneNumberExample: "\(phoneNumberExample.nationalNumber.stringValue)", counterFlag: UIImage(contentsOfFile: imageURL.path ), currency: Locale.currency[regionCode]?.code ?? "")
                 return country
             }  catch _ {
                 
@@ -62,4 +63,11 @@ class CountrySelectorPresenter: NSObject {
         }
     }
     
+}
+
+extension Locale {
+    static let currency: [String: (code: String?, symbol: String?)] = Locale.isoRegionCodes.reduce(into: [:]) {
+        let locale = Locale(identifier: Locale.identifier(fromComponents: [NSLocale.Key.countryCode.rawValue: $1]))
+        $0[$1] = (locale.currencyCode, locale.currencySymbol)
+    }
 }

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var counteryCodeLabel: UILabel!
     @IBOutlet weak var mobileNumberExample: UILabel!
-    
+    let countryData: CountryDataType = .Currency
     override func viewDidLoad() {
         super.viewDidLoad()
         let counterySelectorSearchBar  = CounterySelectorSearchBar()
@@ -25,12 +25,12 @@ class ViewController: UIViewController {
     
     @IBAction func showActionsheet(_ sender: Any) {
         let counterySelectorSearchBar  = CounterySelectorSearchBar()
-        counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .actionSheet)
+        counterySelectorSearchBar.showAlertViewController(parent:self,countryDataType: countryData,actionSheetStyle: .actionSheet)
     }
     
     @IBAction func showAlert(_ sender: Any) {
         let counterySelectorSearchBar  = CounterySelectorSearchBar()
-        counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .alert)
+        counterySelectorSearchBar.showAlertViewController(parent:self,countryDataType: countryData,actionSheetStyle: .alert)
     }
     
     @IBAction func showSearchController(_ sender: Any) {
