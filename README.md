@@ -11,7 +11,7 @@
 using pods
 
 ```bash
-pod 'CountrySelectorLib'
+pod 'CountrySelectorLib','~> 0.1.12'
 ```
 
 
@@ -24,13 +24,13 @@ pod 'CountrySelectorLib'
 ```swift
 import CountrySelectorLib
 
- let counterySelectorSearchBar  = CounterySelectorSearchBar( )     
- counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .actionSheet)
+let counterySelectorSearchBar  = CounterySelectorSearchBar( )     
+counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .actionSheet)
 ```
 // there are another optional parameters 
 
 ```swift
- counterySelectorSearchBar.showAlertViewController(parent: self, actionSheetStyle: .actionSheet, hideSarchBar: true, cancelTitle: "Cancel", searchTitle: "Search For Country")
+counterySelectorSearchBar.showAlertViewController(parent: self, actionSheetStyle: .actionSheet, hideSarchBar: true, cancelTitle: "Cancel", searchTitle: "Search For Country")
 ```
 #  Alert View
 
@@ -39,13 +39,13 @@ import CountrySelectorLib
 ```swift
 import CountrySelectorLib
 
- let counterySelectorSearchBar  = CounterySelectorSearchBar( )     
- counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .alert)
+let counterySelectorSearchBar  = CounterySelectorSearchBar( )     
+counterySelectorSearchBar.showAlertViewController(parent:self,actionSheetStyle: .alert)
 ```
 // there are another optional parameters 
 
 ```swift
- counterySelectorSearchBar.showAlertViewController(parent: self, actionSheetStyle: .alert, hideSarchBar: true, cancelTitle: "Cancel", searchTitle: "Search For Country")
+counterySelectorSearchBar.showAlertViewController(parent: self, actionSheetStyle: .alert, hideSarchBar: true, cancelTitle: "Cancel", searchTitle: "Search For Country")
 ```
 
 #  SearchBarController
@@ -72,32 +72,32 @@ counterySelectorSearchBar.showAlertViewController(parent:self,countryDataType: c
 ```
 # to get specific country 
 
- ```swift
- let counterySelectorSearchBar  = CounterySelectorSearchBar()
- counterySelectorSearchBar.delegate = self
- counterySelectorSearchBar.getCountry(withRegionCode:"eg")
+```swift
+let counterySelectorSearchBar  = CounterySelectorSearchBar()
+counterySelectorSearchBar.delegate = self
+counterySelectorSearchBar.getCountry(withRegionCode:"eg")
 ```
 
 # you should implement Delegate 
 
 ```swift
 extension ViewController: CounterySelectorDelegate {
-    func selectCountery(countery: Country) {
-        self.counteryImage.image = countery.counterFlag
-        self.countryNameLabel.text = countery.name
-        self.counteryCodeLabel.text = countery.phoneCode
-        self.mobileNumberExample.text = countery.phoneNumberExample
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func selectCountery(regionCode: String, country: Country?) {
-       if let country = country {
-       self.counteryImage.image = country.counterFlag
-       self.countryNameLabel.text = country.name
-       self.counteryCodeLabel.text = country.phoneCode
-       self.mobileNumberExample.text = country.phoneNumberExample
-     }
-    }
+func selectCountery(countery: Country) {
+self.counteryImage.image = countery.counterFlag
+self.countryNameLabel.text = countery.name
+self.counteryCodeLabel.text = countery.phoneCode
+self.mobileNumberExample.text = countery.phoneNumberExample
+self.dismiss(animated: true, completion: nil)
+}
+
+func selectCountery(regionCode: String, country: Country?) {
+if let country = country {
+self.counteryImage.image = country.counterFlag
+self.countryNameLabel.text = country.name
+self.counteryCodeLabel.text = country.phoneCode
+self.mobileNumberExample.text = country.phoneNumberExample
+}
+}
 }
 ```
 
