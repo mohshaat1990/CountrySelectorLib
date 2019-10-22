@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CountrySelectorLib'
-  s.version          = '0.1.13'
-  s.summary          = 'CountrySelectorLib is library for select country code and flag with multiple ios controls ex actionAheet , alertview and searchController'
+  s.version          = '0.1.14'
+  s.summary          = 'a library for select country code and flag with multiple ios controls ex actionAheet , alertview and searchController'
   s.description      = <<-DESC
 CountrySelectorLib is library for select country code and flag with multiple ios controls ex actionAheet , alertview and searchController
 DESC

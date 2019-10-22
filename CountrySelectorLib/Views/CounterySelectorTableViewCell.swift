@@ -21,7 +21,9 @@ class CounterySelectorTableViewCell: UITableViewCell {
     func setupCell(countery: Country, countryDataType: CountryDataType) {
         self.counterFlag.image = countery.counterFlag
         self.counteryNameLabel.text = countery.name
-        if countryDataType == .phoneCode {
+        if countryDataType == .countryRegionCode {
+         self.counteryCodeLabel.text = countery.code
+        } else if countryDataType == .phoneCode {
          self.counteryCodeLabel.text = countery.phoneCode
         } else {
          self.counteryCodeLabel.text = countery.currency

@@ -9,6 +9,7 @@ import UIKit
 import libPhoneNumber_iOS
 
 public enum CountryDataType {
+    case  countryRegionCode
      case phoneCode
      case Currency
 }
