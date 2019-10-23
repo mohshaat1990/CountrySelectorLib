@@ -11,7 +11,7 @@
 using pods
 
 ```bash
-pod 'CountrySelectorLib','~> 0.1.12'
+pod 'CountrySelectorLib','~> 0.1.15'
 ```
 
 
