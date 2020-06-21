@@ -19,7 +19,7 @@ public class CounterySelectorSearchBar: UIView {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
     let cellReuseIdentifier = "CounterySelectorTableViewCell"
-    public var delegate: CounterySelectorDelegate?
+    public weak var delegate: CounterySelectorDelegate?
     var countries:[Character : [Country]] = [Character : [Country]]()
     var filterCountries:[Character : [Country]] = [Character : [Country]]()
     var filterCountriesKeys = [Character]()
