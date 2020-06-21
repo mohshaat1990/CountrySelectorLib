@@ -14,7 +14,7 @@ import libPhoneNumber_iOS
     var searchBarPlaceHolder: String = ""
     var cancelButtonTitle: String = ""
     var viewControllerTitle: String = ""
-    public var delegate: CounterySelectorDelegate?
+    public weak var delegate: CounterySelectorDelegate?
     var countries:[Character : [Country]] = [Character : [Country]]()
     var filterCountries:[Character : [Country]] = [Character : [Country]]()
     var filterCountriesKeys = [Character]()
